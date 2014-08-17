@@ -3,13 +3,13 @@
 <PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
 
     <ListPreference
-        android:key="pref_machine_type"
-        android:title="@string/pref_machine_title"
-        android:summary="@string/pref_machine_summ"
-        android:dialogTitle="@string/pref_machine_title"
+        android:key="pref_machine_lib_type"
+        android:title="@string/pref_machine_lib_title"
+        android:summary="@string/pref_machine_lib_summ"
+        android:dialogTitle="@string/pref_machine_lib_title"
         android:entries="@array/pref_machines"
         android:entryValues="@array/pref_machines_values"
-        android:defaultValue="@string/pref_machine_default" />
+        android:defaultValue="@string/pref_machine_lib_default" />
     <SwitchPreference
         android:key="pref_wifi_only"
         android:title="@string/pref_wifi_only_title"
