@@ -8,6 +8,7 @@ import android.preference.PreferenceFragment;
 import android.preference.PreferenceManager;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
 import android.widget.Button;
 import android.widget.SeekBar;
 import android.widget.Toast;
@@ -26,6 +27,8 @@ public class MainActivity extends Activity {
         setContentView(R.layout.activity_main);
         buttonSingle = (Button) findViewById(R.id.buttonSingle);
         buttonDouble = (Button) findViewById(R.id.buttonDouble);
+        buttonSingle.setOnClickListener(singleBrew);
+        buttonDouble.setOnClickListener(doubleBrew);
         seekBarMilk = (SeekBar) findViewById(R.id.seekBarMilk);
         seekBarSugar = (SeekBar) findViewById(R.id.seekBarSugar);
         seekBarMilk.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
@@ -60,11 +63,6 @@ public class MainActivity extends Activity {
                         Toast.LENGTH_SHORT).show();
             }
         });
-        SharedPreferences sp1 = PreferenceManager.getDefaultSharedPreferences(this);
-        String pref_measure = sp1.getString("pref_machine_lib", "toast");
-        if (pref_measure.equals("toast")) {
-
-        }
     }
 
 
@@ -111,4 +109,41 @@ public class MainActivity extends Activity {
                     .commit();
         }
     }
+
+    public View.OnClickListener singleBrew = new View.OnClickListener() {
+        public void onClick(View v) {
+            SharedPreferences sp1 = PreferenceManager.getDefaultSharedPreferences(getApplicationContext());
+            String pref_machine_lib = sp1.getString("pref_machine_lib", "toast");
+            if(pref_machine_lib.equals("toast")){
+                brewtoast("single", seekBarMilk, seekBarSugar);
+            }
+        }
+    };
+
+    public View.OnClickListener doubleBrew = new View.OnClickListener() {
+        public void onClick(View v) {
+            SharedPreferences sp1 = PreferenceManager.getDefaultSharedPreferences(getApplicationContext());
+            String pref_machine_lib = sp1.getString("pref_machine_lib", "toast");
+            if(pref_machine_lib.equals("toast")){
+                brewtoast("double", seekBarMilk, seekBarSugar);
+            }
+        }
+    };
+
+    public int brewtoast(String type, SeekBar milk, SeekBar sugar){
+        if (type.equals("single")){
+            int milkValue = milk.getProgress();
+            int sugarValue = sugar.getProgress();
+            Toast.makeText(getApplicationContext(), getString(R.string.output) + type + ", " + milkValue + ", " + sugarValue,
+                    Toast.LENGTH_SHORT).show();
+        }
+        if (type.equals("double")){
+            int milkValue = milk.getProgress();
+            int sugarValue = sugar.getProgress();
+            Toast.makeText(MainActivity.this, getString(R.string.output) + type + ", " + milkValue + ", " + sugarValue,
+                    Toast.LENGTH_SHORT).show();
+        }
+        return 0;
+    }
+
 }

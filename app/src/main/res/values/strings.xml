@@ -22,5 +22,6 @@
     <string name="sugar">Sugar</string>
     <string name="milk_toast">New Milk Value: </string>
     <string name="sugar_toast">New Sugar Value: </string>
+    <string name="output">Command:</string>
 
 </resources>
