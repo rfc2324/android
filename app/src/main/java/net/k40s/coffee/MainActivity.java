@@ -2,18 +2,69 @@ package net.k40s.coffee;
 
 import android.app.Activity;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.preference.PreferenceFragment;
+import android.preference.PreferenceManager;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.Button;
+import android.widget.SeekBar;
+import android.widget.Toast;
 
 
 public class MainActivity extends Activity {
+
+    Button buttonSingle;
+    Button buttonDouble;
+    SeekBar seekBarMilk;
+    SeekBar seekBarSugar;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        buttonSingle = (Button) findViewById(R.id.buttonSingle);
+        buttonDouble = (Button) findViewById(R.id.buttonDouble);
+        seekBarMilk = (SeekBar) findViewById(R.id.seekBarMilk);
+        seekBarSugar = (SeekBar) findViewById(R.id.seekBarSugar);
+        seekBarMilk.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
+            int progressChanged = 0;
+
+            public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser){
+                progressChanged = progress;
+            }
+
+            public void onStartTrackingTouch(SeekBar seekBar) {
+                // TODO Auto-generated method stub
+            }
+
+            public void onStopTrackingTouch(SeekBar seekBar) {
+                Toast.makeText(MainActivity.this, getString(R.string.milk_toast) + progressChanged,
+                        Toast.LENGTH_SHORT).show();
+            }
+        });
+        seekBarSugar.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
+            int progressChanged = 0;
+
+            public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser){
+                progressChanged = progress;
+            }
+
+            public void onStartTrackingTouch(SeekBar seekBar) {
+                // TODO Auto-generated method stub
+            }
+
+            public void onStopTrackingTouch(SeekBar seekBar) {
+                Toast.makeText(MainActivity.this, getString(R.string.sugar_toast) + progressChanged,
+                        Toast.LENGTH_SHORT).show();
+            }
+        });
+        SharedPreferences sp1 = PreferenceManager.getDefaultSharedPreferences(this);
+        String pref_measure = sp1.getString("pref_machine_lib", "toast");
+        if (pref_measure.equals("toast")) {
+
+        }
     }
 
 

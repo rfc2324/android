@@ -12,37 +12,53 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/make_single"
-        android:id="@+id/button"
+        android:id="@+id/buttonSingle"
         android:layout_marginTop="34dp"
-        android:layout_below="@+id/textView"
+        android:layout_alignParentTop="true"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true" />
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textAppearance="?android:attr/textAppearanceLarge"
-        android:text="@string/app_name"
-        android:id="@+id/textView"
-        android:layout_below="@+id/imageView"
-        android:layout_centerHorizontal="true" />
-
-    <ImageView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/imageView"
-        android:src="@drawable/ic_launcher"
-        android:contentDescription="@string/img_desc_launcher"
-        android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true" />
 
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/make_double"
-        android:id="@+id/button2"
-        android:layout_alignTop="@+id/button"
+        android:id="@+id/buttonDouble"
+        android:layout_alignTop="@+id/buttonSingle"
         android:layout_alignParentRight="true"
         android:layout_alignParentEnd="true" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/milk"
+        android:id="@+id/textMilk"
+        android:layout_below="@id/buttonSingle"
+        android:layout_centerHorizontal="true" />
+
+    <SeekBar
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/seekBarMilk"
+        android:layout_below="@+id/textMilk"
+        android:progress="0"
+        android:max="100"
+        android:layout_centerHorizontal="true" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/sugar"
+        android:id="@+id/textSugar"
+        android:layout_below="@+id/seekBarMilk"
+        android:layout_centerHorizontal="true" />
+
+    <SeekBar
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/seekBarSugar"
+        android:layout_below="@+id/textSugar"
+        android:progress="0"
+        android:max="100"
+        android:layout_centerHorizontal="true" />
 
 </RelativeLayout>

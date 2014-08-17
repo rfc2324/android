@@ -18,5 +18,9 @@
     <string name="pref_machine_port_title">Machine port</string>
     <string name="pref_machine_port_summ">Your machine\'s port</string>
     <string name="pref_machine_port_default">2324</string>
+    <string name="milk">Milk</string>
+    <string name="sugar">Sugar</string>
+    <string name="milk_toast">New Milk Value: </string>
+    <string name="sugar_toast">New Sugar Value: </string>
 
 </resources>

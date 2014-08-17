@@ -3,7 +3,7 @@
 <PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
 
     <ListPreference
-        android:key="pref_machine_lib_type"
+        android:key="pref_machine_lib"
         android:title="@string/pref_machine_lib_title"
         android:summary="@string/pref_machine_lib_summ"
         android:dialogTitle="@string/pref_machine_lib_title"
