@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">Coffee</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="action_settings">Settings</string>
+    <string name="make_single">Single</string>
+    <string name="make_double">Double</string>
+    <string name="img_desc_launcher">Logo</string>
+
+</resources>
