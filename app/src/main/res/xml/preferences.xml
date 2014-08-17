@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <ListPreference
+        android:key="pref_machine_type"
+        android:title="@string/pref_machine_title"
+        android:summary="@string/pref_machine_summ"
+        android:dialogTitle="@string/pref_machine_title"
+        android:entries="@array/pref_machines"
+        android:entryValues="@array/pref_machines_values"
+        android:defaultValue="@string/pref_machine_default" />
+    <SwitchPreference
+        android:key="pref_wifi_only"
+        android:title="@string/pref_wifi_only_title"
+        android:summary="@string/pref_wifi_only_summ"
+        android:defaultValue="true"/>
+    <EditTextPreference
+        android:key="pref_machine_ip"
+        android:title="@string/pref_machine_ip_title"
+        android:summary="@string/pref_machine_ip_summ"
+        android:defaultValue="@string/pref_machine_ip_default" />
+    <EditTextPreference
+        android:key="pref_machine_port"
+        android:title="@string/pref_machine_port_title"
+        android:summary="@string/pref_machine_port_summ"
+        android:defaultValue="@string/pref_machine_port_default" />
+
+</PreferenceScreen>

@@ -7,5 +7,16 @@
     <string name="make_single">Single</string>
     <string name="make_double">Double</string>
     <string name="img_desc_launcher">Logo</string>
+    <string name="pref_machine_title">Machine</string>
+    <string name="pref_machine_summ">Coffee machine to use</string>
+    <string name="pref_machine_default">default</string>
+    <string name="pref_wifi_only_title">Wifi only mode</string>
+    <string name="pref_wifi_only_summ">Send commands only when wifi is connected</string>
+    <string name="pref_machine_ip_title">Machine IP</string>
+    <string name="pref_machine_ip_summ">Your device\'s IP</string>
+    <string name="pref_machine_ip_default">0.0.0.0</string>
+    <string name="pref_machine_port_title">Machine port</string>
+    <string name="pref_machine_port_summ">Your machine\'s port</string>
+    <string name="pref_machine_port_default">2324</string>
 
 </resources>
