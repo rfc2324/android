@@ -4,6 +4,8 @@ android
 Coffee Android Application
 
 ## Contribute
+
+### Adding machine types
 If you want to contribute by adding code for several coffee machines, you have to follow these steps:
 
 1. Create the machine type in the setting's ```pref_machines``` array
