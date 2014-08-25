@@ -31,11 +31,19 @@ public class MainActivity extends Activity {
     Button buttonDouble;
     SeekBar seekBarMilk;
     SeekBar seekBarSugar;
+    Button button1;
+    Button button2;
+    Button button3;
+    Button button4;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        button1 = (Button) findViewById(R.id.button);
+        button2 = (Button) findViewById(R.id.button2);
+        button3 = (Button) findViewById(R.id.button3);
+        button4 = (Button) findViewById(R.id.button4);
         buttonSingle = (Button) findViewById(R.id.buttonSingle);
         buttonDouble = (Button) findViewById(R.id.buttonDouble);
         buttonSingle.setOnClickListener(singleBrew);

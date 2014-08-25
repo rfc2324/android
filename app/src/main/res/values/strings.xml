@@ -23,5 +23,9 @@
     <string name="milk_toast">New Milk Value: </string>
     <string name="sugar_toast">New Sugar Value: </string>
     <string name="output">Command:</string>
+    <string name="save1">1</string>
+    <string name="save2">2</string>
+    <string name="save3">3</string>
+    <string name="save4">4</string>
 
 </resources>
