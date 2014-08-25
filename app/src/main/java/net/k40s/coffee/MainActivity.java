@@ -173,6 +173,8 @@ public class MainActivity extends Activity {
      * You need to specify a string for the
      * filename and another string for the content.
      *
+     * Used to save favorites.
+     *
      * @since     1.0
      */
         FileOutputStream outputStream;
