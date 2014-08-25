@@ -1,6 +1,7 @@
 package net.k40s.coffee;
 
 import android.app.Activity;
+import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
@@ -13,8 +14,18 @@ import android.widget.Button;
 import android.widget.SeekBar;
 import android.widget.Toast;
 
+import java.io.FileOutputStream;
+
 
 public class MainActivity extends Activity {
+
+    /**
+     * This is the main class of the coffee Application.
+     *
+     * @author      Lukas Fülling
+     * @version     %I%, %G%
+     * @since       1.0
+     */
 
     Button buttonSingle;
     Button buttonDouble;
@@ -136,14 +147,36 @@ public class MainActivity extends Activity {
             int sugarValue = sugar.getProgress();
             Toast.makeText(getApplicationContext(), getString(R.string.output) + type + ", " + milkValue + ", " + sugarValue,
                     Toast.LENGTH_SHORT).show();
+            saveToFile("save1", type + ", " + milkValue + ", " + sugarValue);
         }
         if (type.equals("double")){
             int milkValue = milk.getProgress();
             int sugarValue = sugar.getProgress();
             Toast.makeText(MainActivity.this, getString(R.string.output) + type + ", " + milkValue + ", " + sugarValue,
                     Toast.LENGTH_SHORT).show();
+            saveToFile("save2", type + ", " + milkValue + ", " + sugarValue);
         }
         return 0;
+    }
+
+    public void saveToFile (String configName, String configContent) {
+    /**
+     * Writes a file.
+     * You need to specify a string for the
+     * filename and another string for the content.
+     *
+     * @since     1.0
+     */
+        FileOutputStream outputStream;
+
+    try {
+        outputStream = openFileOutput(configName, Context.MODE_PRIVATE);
+        outputStream.write(configContent.getBytes());
+        outputStream.close();
+    } catch (Exception e) {
+        e.printStackTrace();
+    }
+
     }
 
 }
